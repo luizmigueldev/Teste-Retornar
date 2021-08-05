@@ -4,6 +4,60 @@ import Additional from './Additional'
 import { Content } from './styles'
 import Checkout from './Checkout';
 
+const FLAVORS = [
+  {
+    name: "Morango",
+    time: 0,
+    price: 0
+  },
+  {
+    name: "Banana",
+    time: 0,
+    price: 0
+  },
+  {
+    name: "Kiwi",
+    time: 0,
+    price: 0
+  },
+]
+
+const SIZE = [
+  {
+    name: "Pequeno (300ml)",
+    time: 5,
+    price: 10
+  },
+  {
+    name: "Médio (500ml)",
+    time: 7,
+    price: 12
+  },
+  {
+    name: "Grande (700ml)",
+    time: 9,
+    price: 15
+  },
+]
+
+const SIZE = [
+  {
+    name: "Granola",
+    time: 0,
+    price: 3
+  },
+  {
+    name: "Paçoca",
+    time: 0,
+    price: 3
+  },
+  {
+    name: "Leite Ninho",
+    time: 0,
+    price: 3
+  },
+]
+
 
 export default function Order() {
 
