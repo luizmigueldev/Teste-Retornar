@@ -1,11 +1,35 @@
-import React from 'react'
-import ContentOrder from '../../components/ContentOrder'
+import React, { useState } from 'react'
+import ButtonOption from "../../../components/ButtonOption"
+import ButtonAction from "../../../components/ButtonAction"
+import { Content } from './styles'
 
-export default function Additional() {
+export default function FlavorAndSize({ additionals, selectAdditional, nextStep }) {
+
+  const [selectedAdditional, setSelectedAdditional] = useState()
+
+  function handleSelectAdditional(additional) {
+    setSelectedAdditional(additional);
+    selectAdditional(additional)
+  }
+
   return (
-    <ContentOrder>
-
-
-    </ContentOrder>
+    <Content>
+      <h1>Personalize seu açai</h1>
+      <h2>PERSONALIZAÇÃO:</h2>
+      <div>
+        {
+          additionals && additionals.map(additional => <ButtonOption
+            onClick={() => {
+              handleSelectAdditional(additional)
+            }}
+            title={additional}
+            selected={additional == selectedAdditional} />
+          )
+        }
+      </div>
+      <div>
+        <ButtonAction title="Finalizar pedido" onClick={nextStep} />
+      </div>
+    </Content>
   )
 }

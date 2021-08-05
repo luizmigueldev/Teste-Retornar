@@ -14,7 +14,4 @@ export const Content = styled(ContentOrder)`
     color: #7b1fa2;
     align-items: flex-start;
   }
-  ButtonAction{
-    
-  }
 `;
