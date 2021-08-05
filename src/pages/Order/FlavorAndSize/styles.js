@@ -17,5 +17,10 @@ export const Content = styled(ContentOrder)`
 
   #btnAction{
     align-self: flex-end;
+
+    span{
+      font-size: 12px;
+      color: red;
+    }
   }
 `;

@@ -7,6 +7,7 @@ export default function FlavorAndSize({ flavors, sizes, selectFlavor, selectSize
 
   const [selectedFlavor, setSelectedFlavor] = useState()
   const [selectedSize, setSelectedSize] = useState()
+  const [showMessageErro, setShowMessageErro] = useState(false)
 
   function handleSelectFlavor(flavor) {
     setSelectedFlavor(flavor);
@@ -46,7 +47,20 @@ export default function FlavorAndSize({ flavors, sizes, selectFlavor, selectSize
         }
       </div>
       <div id="btnAction">
-        <ButtonAction title="Avançar" onClick={nextStep} />
+        {
+          showMessageErro && (<span>Selecione um sabor e um tamanho !</span>)
+        }
+        <ButtonAction
+          title="Avançar"
+          onClick={() => {
+            if ((selectedFlavor?.name && selectedSize?.name)) {
+              nextStep()
+
+            } else {
+              setShowMessageErro(true)
+            }
+          }}
+        />
       </div>
     </Content>
   )
