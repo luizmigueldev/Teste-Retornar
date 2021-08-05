@@ -45,7 +45,7 @@ export default function FlavorAndSize({ flavors, sizes, selectFlavor, selectSize
           )
         }
       </div>
-      <div id="btn-action">
+      <div id="btnAction">
         <ButtonAction title="Avançar" onClick={nextStep} />
       </div>
     </Content>

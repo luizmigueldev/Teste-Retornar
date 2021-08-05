@@ -3,7 +3,7 @@ import ButtonOption from "../../../components/ButtonOption"
 import ButtonAction from "../../../components/ButtonAction"
 import { Content } from './styles'
 
-export default function FlavorAndSize({ additionals, selectAdditional, nextStep }) {
+export default function Additional({ additionals, selectAdditional, nextStep }) {
 
   const [selectedAdditional, setSelectedAdditional] = useState()
 
@@ -27,7 +27,7 @@ export default function FlavorAndSize({ additionals, selectAdditional, nextStep 
           )
         }
       </div>
-      <div>
+      <div id="btnAction">
         <ButtonAction title="Finalizar pedido" onClick={nextStep} />
       </div>
     </Content>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import FlavorAndSize from './FlavorAndSize'
 import Additional from './Additional'
 import { Content } from './styles'
+import Checkout from './Checkout';
 
 
 export default function Order() {
@@ -48,7 +49,13 @@ export default function Order() {
           />
         );
       case 3:
-        return null;
+        return (
+          <Checkout
+            nextStep={() => {
+              setStep(1)
+            }}
+          />
+        );
       default:
         break;
     }

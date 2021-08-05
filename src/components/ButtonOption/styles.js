@@ -7,6 +7,6 @@ export const Button = styled.button`
   padding: 8px;
   border-radius: 4px;
   color : #a5a5a5;
-  border : 2px solid ${({ selected }) => selected ? "#2D9C17" : "#a5a5a5"};
+  border : 2px solid ${({ selected }) => selected ? "#3CE309" : "#a5a5a5"};
   margin: 10px;
 `;
