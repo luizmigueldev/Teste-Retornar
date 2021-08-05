@@ -1,19 +1,13 @@
-import React from "react";
-import Button from "./components/MyButton"
-import { ButtonAction, ButtonOption } from "./styles";
+import React, { Fragment } from "react";
+import Order from "./pages/Order";
+import GlobalStyle from "./globalStyles";
 
 export default function App() {
-
-  function click() {
-    alert("Vaaiiiiii fé no pai")
-  }
-
   return (
-    <>
-      <Button title="Morango" onClick={click} ></Button>
-      <ButtonAction title="Banana" onClick={click} ></ButtonAction>
-      <ButtonOption title="Maça" onClick={click} ></ButtonOption>
-    </>
+    <Fragment>
+      <GlobalStyle />
+      <Order />
+    </Fragment>
   );
 }
 
