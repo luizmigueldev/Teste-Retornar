@@ -22,7 +22,7 @@ const FLAVORS = [
   },
 ]
 
-const SIZE = [
+const SIZES = [
   {
     name: "Pequeno (300ml)",
     time: 5,
@@ -40,7 +40,7 @@ const SIZE = [
   },
 ]
 
-const SIZE = [
+const ADDITIONALS = [
   {
     name: "Granola",
     time: 0,
@@ -80,8 +80,8 @@ export default function Order() {
     setSelectedSize(size);
   }
 
-  function handleSelectedAdditional(additionals) {
-    setSelectedAdditional(additionals);
+  function handleSelectedAdditional(additional) {
+    setSelectedAdditional(additional);
   }
 
   function resetState() {
@@ -95,8 +95,8 @@ export default function Order() {
       case 1:
         return (
           <FlavorAndSize
-            flavors={["Morango", "Banana", "Kiwi"]}
-            sizes={["Pequeno(300ml)", "Medio(500ml)", "Grande(700ml)"]}
+            flavors={FLAVORS}
+            sizes={SIZES}
             selectFlavor={handleSelectedFlavor}
             selectSize={handleSelectedSize}
             nextStep={() => {
@@ -107,7 +107,7 @@ export default function Order() {
       case 2:
         return (
           <Additional
-            additionals={["Granola", "Paçoca", "Leite ninho"]}
+            additionals={ADDITIONALS}
             selectAdditional={handleSelectedAdditional}
             nextStep={() => {
               setStep(3)
@@ -119,7 +119,7 @@ export default function Order() {
           <Checkout
             flavor={selectedFlavor}
             size={selectedSize}
-            additionals={selectedAdditional}
+            additional={selectedAdditional}
             nextStep={() => {
               setStep(1)
             }}

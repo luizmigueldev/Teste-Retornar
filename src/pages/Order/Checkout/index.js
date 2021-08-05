@@ -6,20 +6,21 @@ import { Content } from './styles'
 export default function Checkout({ flavor, size, additional, nextStep }) {
 
 
+
   return (
     <Content>
       <h1>Resumo do pedido</h1>
 
       <h2>TAMANHO:</h2>
       <div className="description">
-        <p>- {size}</p>
-        <p>R$ Valor</p>
+        <p>- {size.name}</p>
+        <p>R$ {size.price.toFixed(2)}</p>
       </div>
 
       <h2>SABOR:</h2>
       <div className="description">
-        <p>- {flavor}</p>
-        <p>R$ Valor</p>
+        <p>- {flavor.name}</p>
+        <p>R$ {flavor.price.toFixed(2)}</p>
       </div>
 
       {
@@ -27,8 +28,8 @@ export default function Checkout({ flavor, size, additional, nextStep }) {
           <>
             <h2>PERSONALIZAÇÕES:</h2>
             <div className="description">
-              <p>- {additional}</p>
-              <p>R$ Valor</p>
+              <p>- {additional.name}</p>
+              <p>R$ {additional.price.toFixed(2)}</p>
             </div>
           </>)
       }

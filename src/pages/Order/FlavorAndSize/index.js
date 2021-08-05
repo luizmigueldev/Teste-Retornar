@@ -28,8 +28,8 @@ export default function FlavorAndSize({ flavors, sizes, selectFlavor, selectSize
             onClick={() => {
               handleSelectFlavor(flavor)
             }}
-            title={flavor}
-            selected={flavor == selectedFlavor} />
+            title={flavor.name}
+            selected={flavor.name == selectedFlavor?.name} />
           )
         }
       </div>
@@ -40,8 +40,8 @@ export default function FlavorAndSize({ flavors, sizes, selectFlavor, selectSize
             onClick={() => {
               handleSelectSize(size)
             }}
-            title={size}
-            selected={size == selectedSize} />
+            title={size.name}
+            selected={size.name == selectedSize?.name} />
           )
         }
       </div>

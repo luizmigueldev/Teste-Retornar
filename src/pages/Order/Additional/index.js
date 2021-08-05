@@ -22,8 +22,8 @@ export default function Additional({ additionals, selectAdditional, nextStep }) 
             onClick={() => {
               handleSelectAdditional(additional)
             }}
-            title={additional}
-            selected={additional == selectedAdditional} />
+            title={additional.name}
+            selected={additional.name == selectedAdditional?.name} />
           )
         }
       </div>
