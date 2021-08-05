@@ -5,7 +5,13 @@ import { Content } from './styles'
 
 export default function Checkout({ flavor, size, additional, nextStep }) {
 
+  function calculatePrice() {
+    return flavor.price + size.price + additional.price;
+  }
 
+  function calculateTime() {
+    return flavor.time + size.time + additional.time;
+  }
 
   return (
     <Content>
@@ -35,8 +41,8 @@ export default function Checkout({ flavor, size, additional, nextStep }) {
       }
 
       <div className="resume">
-        <p>Valor total: R$ 16.00</p>
-        <p>Tempo de preparo:</p>
+        <p>Valor total: R$ {calculatePrice().toFixed(2)}</p>
+        <p>Tempo de preparo: {calculateTime()}min</p>
       </div>
 
       <div id="btnAction">
