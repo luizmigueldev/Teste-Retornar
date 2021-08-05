@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FlavorAndSize from './FlavorAndSize'
 import Additional from './Additional'
 import { Content } from './styles'
@@ -12,6 +12,12 @@ export default function Order() {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedAdditional, setSelectedAdditional] = useState("");
 
+  useEffect(() => {
+
+    step === 1 && resetState()
+
+  }, [step])
+
   function handleSelectedFlavor(flavor) {
     setSelectedFlavor(flavor);
   }
@@ -22,6 +28,12 @@ export default function Order() {
 
   function handleSelectedAdditional(additionals) {
     setSelectedAdditional(additionals);
+  }
+
+  function resetState() {
+    setSelectedFlavor("");
+    setSelectedSize("");
+    setSelectedAdditional("");
   }
 
   function renderSteps() {
@@ -51,6 +63,9 @@ export default function Order() {
       case 3:
         return (
           <Checkout
+            flavor={selectedFlavor}
+            size={selectedSize}
+            additionals={selectedAdditional}
             nextStep={() => {
               setStep(1)
             }}
