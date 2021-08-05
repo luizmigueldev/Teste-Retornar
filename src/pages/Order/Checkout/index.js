@@ -6,11 +6,11 @@ import { Content } from './styles'
 export default function Checkout({ flavor, size, additional, nextStep }) {
 
   function calculatePrice() {
-    return flavor.price + size.price + additional.price;
+    return flavor.price + size.price + (additional?.price || 0);
   }
 
   function calculateTime() {
-    return flavor.time + size.time + additional.time;
+    return flavor.time + size.time + (additional?.time || 0);
   }
 
   return (
