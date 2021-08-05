@@ -18,7 +18,7 @@ export default function Order() {
   }
 
   function renderSteps() {
-    switch (1) {
+    switch (step) {
       case 1:
         return (
           <FlavorAndSize
@@ -27,6 +27,7 @@ export default function Order() {
             selectFlavor={handleSelectedFlavor}
             selectSize={handleSelectedSize}
             nextStep={() => {
+              alert("adasd")
               setStep(2)
             }}
           />
